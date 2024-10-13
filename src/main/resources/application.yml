@@ -1,4 +1,6 @@
 spring:
+  server:
+    port: 8082
   profiles:
     active: loadInitialData
   datasource:
@@ -9,5 +11,4 @@ spring:
   h2:
     console:
       enabled: true
-  server:
-    port: 8090
+      path: /h2
