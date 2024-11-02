@@ -30,4 +30,12 @@ public interface UserProvider {
      */
     List<User> findAllUsers();
 
+    /**
+     * Retrieves users who are older than the given age.
+     *
+     * @param age The age at which to filter users
+     * @return A list of users who are older than the given age
+     */
+    List<User> getUsersOlderThan(int age);
+
 }

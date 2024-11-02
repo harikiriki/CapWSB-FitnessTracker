@@ -2,17 +2,16 @@ package com.capgemini.wsb.fitnesstracker.user.api;
 
 import jakarta.annotation.Nullable;
 import jakarta.persistence.*;
-import lombok.AccessLevel;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.ToString;
+import lombok.*;
 
+import java.time.Instant;
 import java.time.LocalDate;
 
 @Entity
-@Table(name = "users")
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
+@Setter
+@Table(name = "users")
 @ToString
 public class User {
 
@@ -44,6 +43,5 @@ public class User {
         this.birthdate = birthdate;
         this.email = email;
     }
-
 }
 

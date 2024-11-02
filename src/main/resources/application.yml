@@ -1,6 +1,6 @@
+server:
+  port: 8082
 spring:
-  server:
-    port: 8082
   profiles:
     active: loadInitialData
   datasource:
