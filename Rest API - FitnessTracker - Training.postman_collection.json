@@ -1,0 +1,100 @@
+{
+	"info": {
+		"_postman_id": "ebdf091b-2692-41bf-b58d-58ec94553f99",
+		"name": "FitnessTracker - Training",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "39916133"
+	},
+	"item": [
+		{
+			"name": "wyszukiwanie wszystkich treningów",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8082/v1/trainings"
+			},
+			"response": []
+		},
+		{
+			"name": "wyszukiwanie treningów dla określonego Użytkownika",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8082/v1/trainings/1"
+			},
+			"response": []
+		},
+		{
+			"name": "wyszukiwanie wszystkich treningów zakończonych (po konkretnej zdefiniowanej dacie)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8082/v1/trainings/finished/2024-01-18"
+			},
+			"response": []
+		},
+		{
+			"name": "wyszukiwanie wszystkich treningów dla konkretnej aktywności (np. wszystkie treningi biegowe)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8082/v1/trainings/activityType?activityType=RUNNING",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"v1",
+						"trainings",
+						"activityType"
+					],
+					"query": [
+						{
+							"key": "activityType",
+							"value": "RUNNING"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "utworzenie nowego treningu",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"userId\": 1,\r\n  \"startTime\": \"2024-11-24T10:00:00\",\r\n  \"endTime\": \"2024-11-24T11:00:00\",\r\n  \"activityType\": \"RUNNING\",\r\n  \"distance\": 5.0,\r\n  \"averageSpeed\": 10.0\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8082/v1/trainings"
+			},
+			"response": []
+		},
+		{
+			"name": "aktualizacja treningu (dowolnie wybrane pole np. dystans)",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"userId\": 1,\r\n  \"startTime\": \"2024-11-24T10:30:00\",\r\n  \"endTime\": \"2024-11-24T11:30:00\",\r\n  \"activityType\": \"CYCLING\",\r\n  \"distance\": 15.0,\r\n  \"averageSpeed\": 20.0\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8082/v1/trainings/5"
+			},
+			"response": []
+		}
+	]
+}
